@@ -36,8 +36,8 @@ jobs:
         cd /inputs/stylegan2
         pip install colab_ssh
         pip install colab_ssh --upgrade
-        from colab_ssh import launch_ssh
-        launch_ssh 1yeTdNMI6I0hhpSIenfZuPGU2yc_75A5EkpnQWVCQw33pfBC8, 123
+        pip from colab_ssh import launch_ssh
+        pip launch_ssh 1yeTdNMI6I0hhpSIenfZuPGU2yc_75A5EkpnQWVCQw33pfBC8, 123
         python run_generator.py generate-images \
           --network=gdrive:networks/stylegan2-ffhq-config-f.pkl \
           --seeds=6600-6605 \
